@@ -1,0 +1,7 @@
+.idea/*
+data/*
+vendor/*
+www/bower_components
+config.neon
+
+*.map

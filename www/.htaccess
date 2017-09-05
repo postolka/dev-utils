@@ -1,0 +1,6 @@
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !'-d'
+RewriteCond %{REQUEST_URI} ^/[-_a-z0-9]+$
+RewriteCond %{REQUEST_URI} !^(css|js)$
+RewriteRule ([-_a-z0-9]+) index.php?pge=$1 [L,QSA]

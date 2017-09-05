@@ -1,0 +1,7 @@
+notes:
+	path: c:/data/notes.txt # path to "notes" file
+	encryption: aes128 # encryption algorythm for "notes" file - see openssl_encrypt()
+databases:
+	my_db: # database name
+		user: user # username
+		pass: 1234 # password

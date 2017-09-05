@@ -1,0 +1,20 @@
+{
+  "name": "dev-utils",
+  "authors": [
+    "postolka <postolka@gmail.com>"
+  ],
+  "description": "Jan Kopidol",
+  "main": "",
+  "keywords": [
+    "Utilities"
+  ],
+  "license": "MIT",
+  "directory": "www/bower_components/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "www/bower_components",
+    "package.json"
+  ],
+  "dependencies": {}
+}
