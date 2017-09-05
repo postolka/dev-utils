@@ -1,7 +1,8 @@
-.idea/*
+.idea
 data/*
-vendor/*
+vendor
 www/bower_components
 config.neon
+.sass-cache
 
 *.map
