@@ -37,8 +37,13 @@ for ($p = 0; $p < $cnt; $p++){
 <button class="btn btn-primary" type="submit">Generate</button>
 </form><hr/>
 <table>
-	<tr><th>pass</th><th>MD5</th></tr>
+	<tr><th>pass</th><th>MD5</th><th>PassHash</th></tr>
 <?php
 foreach ($pList as $pass)
-	printf('<tr><td><pre>%s</pre></td><td><pre>%s</pre></td></tr>', $pass, md5($pass)); ?>
+	printf('<tr><td><pre>%s</pre></td><td><pre>%s</pre></td><td><pre>%s</pre></td></tr>
+',
+		$pass,
+		md5($pass),
+		password_hash($pass, PASSWORD_BCRYPT)
+	); ?>
 </table>
