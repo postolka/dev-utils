@@ -1,4 +1,7 @@
 <?php
+
+use Nette\Neon\Neon;
+
 require '../utils.inc';
 
 $config = Neon::decode(file_get_contents(APP_ROOT.'/config.neon'));
@@ -41,7 +44,7 @@ $menuGroups = array(
 		'rendertime'			=> 'Render time calculator')
 );
 
-use Nette\Neon\Neon; ?>
+?>
 <?= htmlHead('Dev utils'.($pgeName ? " - $pgeName" : NULL)) ?>
 <h1>
 	<span class="main">My Tools</span>
