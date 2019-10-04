@@ -1,7 +1,7 @@
 <?php
 require '../utils.inc';
 
-$config = \Nette\Neon\Neon::decode(file_get_contents(APP_ROOT.'/config.neon'));
+$config = Neon::decode(file_get_contents(APP_ROOT.'/config.neon'));
 
 session_name('utils');
 session_start();
@@ -34,13 +34,14 @@ $menuGroups = array(
 		'info'		=> 'phpinfo()',
 		'locales'	=> 'List of locales',
 		'notes'		=> 'Notes',
-		'speeddial'		=> 'Speed dial'),
+		'speeddial'		=> 'Speed dial',
+		'mail'		=> 'Send email via SMTP'),
 	'Graphics'	=> array(
 		'dpi'			=> 'DPI calculator',
 		'rendertime'			=> 'Render time calculator')
 );
 
-?>
+use Nette\Neon\Neon; ?>
 <?= htmlHead('Dev utils'.($pgeName ? " - $pgeName" : NULL)) ?>
 <h1>
 	<span class="main">My Tools</span>
