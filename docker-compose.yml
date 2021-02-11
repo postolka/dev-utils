@@ -1,0 +1,10 @@
+services:
+  server:
+#    image: php:8-apache
+    build: .
+    environment:
+    - APACHE_DOCUMENT_ROOT=/var/www/html/www/
+    volumes:
+    - .:/var/www/html/
+    ports:
+    - 8084:80
