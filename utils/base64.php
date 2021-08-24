@@ -19,8 +19,8 @@ if (!empty($_POST['dir'])) switch($_POST['dir']){
 	<td><textarea name="text" id="text" cols="80" rows="10"><?=$text?></textarea></td>
 	<td>
 		<div class="btn-group-vertical" role="group">
-			<button class="btn btn-default" name="dir" type="submit" value="&gt;"><span class="fa fa-chevron-right"></span></button>
-			<button class="btn btn-default" name="dir" type="submit" value="&lt;"><span class="fa fa-chevron-left"></span></button>
+			<button class="btn btn-default" name="dir" type="submit" value="&gt;"><span class="fas fa-chevron-right"></span></button>
+			<button class="btn btn-default" name="dir" type="submit" value="&lt;"><span class="fas fa-chevron-left"></span></button>
 		</div>
 	</td>
 	<td><textarea name="base" id="base" cols="80" rows="10"><?=$base?></textarea></td>

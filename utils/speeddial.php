@@ -1,13 +1,13 @@
 <?php $pgeName = 'Speed dial';
 
-define('SPEED_DIAL_CFG', APP_ROOT.'/data/speed_dial.json');
-define('SPEED_DIAL_PLACEHOLDER', '~QUERY~');
+const SPEED_DIAL_CFG = APP_ROOT.'/data/speed_dial.json';
+const SPEED_DIAL_PLACEHOLDER = '~QUERY~';
 
 $update = !empty($_POST['update']);
 $usrc = @json_decode(@file_get_contents(SPEED_DIAL_CFG));
 if ($update){
-	$szx = (int) (isset($_POST['x']) ? $_POST['x'] : NULL);
-	$szy = (int) (isset($_POST['y']) ? $_POST['y'] : NULL);
+	$szx = (int) ($_POST['x'] ?? NULL);
+	$szy = (int) ($_POST['y'] ?? NULL);
 }
 else{
 	$szy = count($usrc);
@@ -74,7 +74,7 @@ HTML;
 				$cell = <<<HTML
 <form method="get" action="$action">
 	$iList
-	<button type="submit">$label <span class="fa fa-chevron-right"></span></button>
+	<button type="submit">$label <span class="fas fa-chevron-right"></span></button>
 </form>
 HTML;
 

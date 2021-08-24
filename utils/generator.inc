@@ -1,6 +1,6 @@
 <?php
 
-$types = array(
+$types = [
 	'name'  => 'Name',
 	'firstName'  => 'First name',
 	'lastName'  => 'Surname',
@@ -15,9 +15,9 @@ $types = array(
 	'password' => 'Password',
 	'text' => 'Text',
 	'constant' => 'Constant'
-);
+];
 
-$locales = array(
+$locales = [
 	'cs_CZ',
 	'en_US'
-);
+];

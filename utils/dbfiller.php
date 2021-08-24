@@ -52,7 +52,7 @@ if ($dbData) {
 <?php	} ?>
 			</select>
 			<div class="input-group-btn">
-				<button class="btn btn-primary"><span class="fa fa-ok"></span></button>
+				<button class="btn btn-primary"><span class="fas fa-ok"></span></button>
 			</div>
 		</div>
 	</form>

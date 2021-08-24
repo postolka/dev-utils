@@ -1,4 +1,6 @@
 <?php
+/** @var array $config Defined in index.php */
+
 $pgeName = 'Personal notes';
 
 if (getPost('lock'))
@@ -25,11 +27,11 @@ if ($dataEnc && $key){
 
 if (!$key){?>
 <form action="<?= URL_ROOT ?>notes" method="post" id="note-unlock">
-	<h2><span class="fa fa-lock"></span> Locked!</h2>
+	<h2><span class="fas fa-lock"></span> Locked!</h2>
 	<div class="input-group">
 		<input name="pass" class="form-control" type="password" title="Password"/>
 		<span class="input-group-btn">
-			<button class="btn btn-primary" type="submit" name="unlock" value="unlock"><span class="fa fa-retweet"></span> Unlock</button>
+			<button class="btn btn-primary" type="submit" name="unlock" value="unlock"><span class="fas fa-retweet"></span> Unlock</button>
 		</span>
 	</div>
 </form>
@@ -52,15 +54,15 @@ if ($edit){
 ?>
 <form action="<?= URL_ROOT ?>notes" method="post">
 	<?= codeEditor($dataDec, 'data') ?>
-	<button name="save" value="save" class="btn btn-success" title="Confirm"><span class="fa fa-ok"></span></button>
-	<button name="save" value="cancel" class="btn btn-danger" title="Cancel"><span class="fa fa-times"></span></button>
+	<button name="save" value="save" class="btn btn-success" title="Confirm"><span class="fas fa-ok"></span></button>
+	<button name="save" value="cancel" class="btn btn-danger" title="Cancel"><span class="fas fa-times"></span></button>
 </form>
 <?php
 }
 else{ ?>
 <form id="note-edit" action="<?= URL_ROOT ?>notes" method="post">
-	<button name="edit" value="edit" class="btn btn-default" title="Edit"><span class="fa fa-edit"></span></button>
-	<button name="lock" value="lock" class="btn btn-warning" title="Lock"><span class="fa fa-lock"></span></button>
+	<button name="edit" value="edit" class="btn btn-default" title="Edit"><span class="fas fa-edit"></span></button>
+	<button name="lock" value="lock" class="btn btn-warning" title="Lock"><span class="fas fa-lock"></span></button>
 </form>
 <pre id="notes"><?= $dataDec ?></pre>
 <?php

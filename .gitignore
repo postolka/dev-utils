@@ -1,8 +1,22 @@
+# IDE, cache
 .idea
-data/*
-vendor
-www/bower_components
-config.neon
 .sass-cache
 
+# Installed packages
+/vendor
+/node_modules
+
+# Built files, dev
 *.map
+/www/*.css
+/www/*.js
+/www/fonts
+
+# Work/temporary
+~*
+
+# Configuration
+config.neon
+
+# Local resources
+/data

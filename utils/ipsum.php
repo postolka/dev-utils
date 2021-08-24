@@ -2,6 +2,9 @@
 $pgeName = 'Whatever-Ipsum generator';
 require 'generator.inc';
 require 'ipsum.inc';
+/** @var string[] $locales Initialized in generator.inc */
+/** @var string[] $types Initialized in generator.inc */
+
 
 $ipsumURL = URL_ROOT.'ipsum';
 $fullURL = $_SERVER['REQUEST_SCHEME'].'://'.$_SERVER['HTTP_HOST'].$ipsumURL;
@@ -31,7 +34,7 @@ function getField($fID, $type, $sel = NULL, $val= NULL){
 	<input type="text" class="form-control code" id="{$fID}_sel" name="selector[]" value="$sel" onchange="updateCode()" title="selector"/>
 	<input type="text" class="form-control code value" value="$val" title="random generated value"$readOnly/>
 	<div class="input-group-btn">
-		<button onclick="delField('#$fID')" class="btn btn-danger"><span class="fa fa-trash"></span></button>
+		<button onclick="delField('#$fID')" class="btn btn-danger"><span class="fas fa-trash"></span></button>
 	</div>
 </div>
 HTML;
@@ -94,13 +97,13 @@ function addField(generator){
 	});
 }
 function updateCode(){
-	var provider = $('#generator').val();
-	var locale = $('#locale').val();
-	var selectors = [];
-	var constants = [];
+	const provider = $('#generator').val();
+	const locale = $('#locale').val();
+	const selectors = [];
+	const constants = [];
 	$('#fields').find('div.input-group').each(function(){
-		var fType = $(this).find('input[name="type[]"]').val();
-		var fSelector = $(this).find('input[name="selector[]"]').val();
+		const fType = $(this).find('input[name="type[]"]').val();
+		const fSelector = $(this).find('input[name="selector[]"]').val();
 		if (fType === 'constant'){
 			constants.push('$('+JSON.stringify(fSelector)+').val('+JSON.stringify($(this).find('input.value').val())+')');
 		}
@@ -111,12 +114,12 @@ function updateCode(){
 	});
 console.log(constants);
 	//editor.getSession().setValue();
-	editor.setValue(<?= strtr(json_encode($updateScript), array(
+	editor.setValue(<?= strtr(json_encode($updateScript), [
 	'$selectors$' => '"+JSON.stringify(selectors)+"',
 	'$provider$'  => '"+provider+"',
 	'$locale$' => '\'"+locale+"\'',
 	'$constants$' => '"+constants.join(\'\')+"'
-)) ?>);
+	]) ?>);
 }
 </script>
 <form id="ipsum">

@@ -50,7 +50,7 @@ if ($mSend && $mServer && $mPassword && $mTo) {
 	<input class="form-control" type="text" name="subject" id="subject" value="<?= htmlentities($mSubject) ?>"/>
 	<label for="subject">Body</label>
 	<textarea class="form-control" name="body" id="body"><?= htmlentities($mBody) ?></textarea>
-	<button name="send" value="send" class="btn btn-success" title="Send"><span class="fa fa-ok"></span> Send!</button>
+	<button name="send" value="send" class="btn btn-success" title="Send"><span class="fas fa-ok"></span> Send!</button>
 </form>
 <?php
 if (!empty($errors)) { ?>
